@@ -3,8 +3,9 @@ package mx.com.n3xgen.rabbitSource.service;
 import java.io.IOException;
 import java.util.concurrent.TimeoutException;
 
-import mx.com.n3xgen.rabbitSource.bean.RabbitMQProperties;
+import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 
 public interface ReceiveMessage {
-	public String listener(String payload, RabbitMQProperties rabbitmqproperties) throws IOException, TimeoutException, InterruptedException;
+	public String listener(ConnectionFactory connectionFactory)
+			throws IOException, TimeoutException, InterruptedException;
 }
